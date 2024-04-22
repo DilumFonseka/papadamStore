@@ -126,7 +126,7 @@ const Edit = () => {
       
       if(response.status === 200){
         setUpdate(response.data)
-        navigate("/")
+        navigate("/home")
       }
 
     }

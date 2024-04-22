@@ -118,7 +118,7 @@ const Register = () => {
         setStatus("");
         setImage("");
         setUseradd(response.data)
-        navigate("/");
+        navigate("/home");
       }else{
         toast.error("Error!")
       }
