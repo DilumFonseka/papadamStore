@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-const DB = "mongodb+srv://dilumfonseka1998:mUJ1VMr4kj5NoQym@cluster0.pgqewlk.mongodb.net/papadamapp?retryWrites=true&w=majority&appName=Cluster0";
+const DB = "mongodb+srv://nishikaemalshi:XNKGra9w7y0AexTD@cluster0.ukmnjdl.mongodb.net/papadamapp?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose.connect(DB, {
     useUnifiedTopology: true,
