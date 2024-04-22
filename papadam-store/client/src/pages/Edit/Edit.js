@@ -41,25 +41,25 @@ const Edit = () => {
 
   const {id} = useParams();
 
-  // status optios
+ 
   const options = [
     { value: 'wholesale', label: 'wholesale' },
     { value: 'supplier', label: 'supplier' },
     { value: 'regular', label: 'regular' },
   ];
 
-  // setInput Value
+
   const setInputValue = (e) => {
     const { name, value } = e.target;
     setInputData({ ...inputdata, [name]: value })
   }
 
-  // status set
+  
   const setStatusValue = (e) => {
     setStatus(e.value)
   }
 
-  // profile set
+  
   const setProfile = (e) => {
     setImage(e.target.files[0])
   }
@@ -79,7 +79,7 @@ const Edit = () => {
   }
   
 
-  //submit userdata
+
   const submitUserData = async(e) => {
     e.preventDefault();
 

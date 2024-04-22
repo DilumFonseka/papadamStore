@@ -1,11 +1,13 @@
-const users = require("../models/usersSchema");
-const moment = require("moment");
-const csv = require("fast-csv");
-const fs = require("fs");
-const BASE_URL = process.env.BASE_URL
+import moment from "moment";
+import csv from "fast-csv";
+import fs from "fs";
+import users from "../models/usersSchema.js";
 
-// register user
-exports.userpost = async (req, res) => {
+
+const BASE_URL = process.env.BASE_URL;
+
+
+export const userpost = async (req, res) => {
     const file = req.file.filename;
     const { fname, lname, email,password, mobile, gender, location, status } = req.body;
 
@@ -36,7 +38,7 @@ exports.userpost = async (req, res) => {
 
 
 
-exports.userget = async (req, res) => {
+export const userget = async (req, res) => {
 
     const search = req.query.search || ""
     const gender = req.query.gender || ""
@@ -83,7 +85,7 @@ exports.userget = async (req, res) => {
 }
 
 
-exports.singleuserget = async (req, res) => {
+export const singleuserget = async (req, res) =>{
 
     const { id } = req.params;
 
@@ -96,7 +98,7 @@ exports.singleuserget = async (req, res) => {
 }
 
 
-exports.useredit = async (req, res) => {
+export const useredit = async (req, res) => {
     const { id } = req.params;
     const { fname, lname, email, password, mobile, gender, location, status, user_profile } = req.body;
     const file = req.file ? req.file.filename : user_profile
@@ -118,7 +120,7 @@ exports.useredit = async (req, res) => {
 }
 
 
-exports.userdelete = async (req, res) => {
+export const userdelete = async (req, res) => {
     const { id } = req.params;
     try {
         const deletuser = await users.findByIdAndDelete({ _id: id });
@@ -129,7 +131,7 @@ exports.userdelete = async (req, res) => {
 }
 
 
-exports.userstatus = async (req, res) => {
+export const userstatus = async (req, res) => {
     const { id } = req.params;
     const { data } = req.body;
 
@@ -142,7 +144,7 @@ exports.userstatus = async (req, res) => {
 }
 
 
-exports.userExport = async (req, res) => {
+export const userExport = async (req, res) => {
     try {
         const usersdata = await users.find();
 

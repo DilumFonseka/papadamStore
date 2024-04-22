@@ -1,7 +1,9 @@
-const mongoose = require("mongoose");
-const validator = require("validator");
+import mongoose from "mongoose";
+import validator from "validator";
 
-const usersSchema = new mongoose.Schema({
+const { Schema, model } = mongoose;
+
+const usersSchema = new Schema({
     fname: {
         type: String,
         required: true,
@@ -50,11 +52,10 @@ const usersSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    datecreated:Date,
-    dateUpdated:Date
+    datecreated: Date,
+    dateUpdated: Date
 });
 
+const users = model("users", usersSchema);
 
-const users = new mongoose.model("users",usersSchema);
-
-module.exports = users;
+export default users;
